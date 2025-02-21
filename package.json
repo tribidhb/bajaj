@@ -1,6 +1,6 @@
 {
   "name": "bfhl-tribidh",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A fully functional REST API for Bajaj Finserv Health Challenge by Tribidh Bhagat.",
   "main": "index.js",
   "scripts": {
@@ -22,5 +22,6 @@
   },
   "engines": {
     "node": ">=14.0.0"
-  }
+  },
+  "homepage": "https://bajaj-z9e1.onrender.com"
 }
