@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Health Check Endpoint
 app.get("/", (req, res) => {
-  res.status(200).send("Server is running successfully!");
+  res.status(200).send("Server is running successfully at https://bajaj-z9e1.onrender.com");
 });
 
 // Main API Endpoint
@@ -46,15 +46,16 @@ app.route("/bfhl")
       numbers: numericValues,
       alphabets: alphabeticValues,
       highest_alphabet: topAlphabet ? [topAlphabet] : [],
+      api_url: "https://bajaj-z9e1.onrender.com/bfhl"
     });
   });
 
 // Handle 404 Errors
 app.use((req, res, next) => {
-  res.status(404).json({ error: "Endpoint not found" });
+  res.status(404).json({ error: "Endpoint not found", api_url: "https://bajaj-z9e1.onrender.com" });
 });
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running at https://bajaj-z9e1.onrender.com`);
 });
