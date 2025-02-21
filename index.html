@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BFHL API - Tribidh Bhagat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+        }
+        pre {
+            text-align: left;
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>BFHL API - Tribidh Bhagat</h1>
+    <p>Enter JSON data and get the processed response</p>
+    
+    <textarea id="jsonInput" rows="5" cols="50" placeholder='{"data": ["A", "C", "z", "1", "2"]}'></textarea>
+    <br>
+    <button onclick="sendRequest()">Submit</button>
+    
+    <h2>Response:</h2>
+    <pre id="response"></pre>
+    
+    <script>
+        async function sendRequest() {
+            const inputData = document.getElementById("jsonInput").value;
+            try {
+                const response = await fetch("/bfhl", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: inputData
+                });
+                const result = await response.json();
+                document.getElementById("response").textContent = JSON.stringify(result, null, 2);
+            } catch (error) {
+                document.getElementById("response").textContent = "Error: " + error.message;
+            }
+        }
+    </script>
+</body>
+</html>
