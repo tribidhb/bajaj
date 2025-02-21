@@ -1,18 +1,26 @@
 {
   "name": "bfhl-tribidh",
-  "version": "1.0.1",
-  "description": "Customized REST API project for Bajaj Finserv Challenge, personalized by Tribidh Bhagat.",
+  "version": "1.0.2",
+  "description": "A fully functional REST API for Bajaj Finserv Health Challenge by Tribidh Bhagat.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"No test specified\" && exit 1"
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["REST API", "Challenge", "Tribidh Bhagat", "Backend"],
+  "keywords": ["REST API", "Bajaj Finserv", "Challenge", "Tribidh Bhagat"],
   "author": "Tribidh Bhagat",
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
+    "cors": "^2.8.5",
     "body-parser": "^1.20.1",
-    "cors": "^2.8.5"
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
